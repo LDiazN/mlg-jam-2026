@@ -1,3 +1,4 @@
+using QFSW.QC;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -47,7 +48,7 @@ public class AudioManager : MonoBehaviour
         source.Play();
     }
 
-    public static void PlaySpatial(AudioClip clip, Vector3 position, float minPitch = 1, float maxPitch = 1,
+    public static void PlayAtPosition(AudioClip clip, Vector3 position, float minPitch = 1, float maxPitch = 1,
         float volume = 1, float start = 0)
     {
         if (!_instance)
@@ -80,6 +81,7 @@ public class AudioManager : MonoBehaviour
         source.Play();
     }
 
+    [Command("aud.bg-vol", "Change volume of background music")]
     public static void BackgroundVolume(float volume)
     {
         if (!_instance)
