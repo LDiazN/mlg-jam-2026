@@ -24,7 +24,8 @@ namespace Control
 
         #region Events
 
-        public Action OnExampleEvent;
+        public event Action OnExampleEvent;
+        public event Action<int,int> OnPlayerJoined;
 
         #endregion
 
@@ -39,6 +40,8 @@ namespace Control
 
         public static EventsChannel Get() => _instance;
 
-        public static void ExampleEvent() => _instance?.OnExampleEvent.Invoke();
+        public static void ExampleEvent() => _instance?.OnExampleEvent?.Invoke();
+
+        public static void NewPlayerJoined(int playerId, int controllerId) => _instance?.OnPlayerJoined?.Invoke(playerId, controllerId);
     }
 }
