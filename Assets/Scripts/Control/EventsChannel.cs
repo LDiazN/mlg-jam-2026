@@ -24,7 +24,13 @@ namespace Control
 
         #region Events
 
-        public Action OnExampleEvent;
+        public event Action OnExampleEvent;
+
+        // Args: PlayerID, DeviceId
+        public event Action<int,int> OnPlayerJoined;
+
+        // Args: Player ID
+        public event Action<int> OnPlayerLeft;
 
         #endregion
 
@@ -39,6 +45,10 @@ namespace Control
 
         public static EventsChannel Get() => _instance;
 
-        public static void ExampleEvent() => _instance?.OnExampleEvent.Invoke();
+        public static void ExampleEvent() => _instance?.OnExampleEvent?.Invoke();
+
+        public static void PlayerJoined(int playerId, int controllerId) => _instance?.OnPlayerJoined?.Invoke(playerId, controllerId);
+
+        public static void PlayerLeft(int playerId) => _instance?.OnPlayerLeft?.Invoke(playerId);
     }
 }
