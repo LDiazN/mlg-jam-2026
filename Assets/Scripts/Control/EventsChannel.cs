@@ -1,4 +1,5 @@
 using System;
+using MPlayer;
 using UnityEngine;
 
 namespace Control
@@ -32,6 +33,16 @@ namespace Control
         // Args: Player ID
         public event Action<int> OnPlayerLeft;
 
+        public event Action OnCandleLit;
+
+        public event Action<Ritual> OnRitualComplete;
+
+        public event Action OnDragonWins;
+
+        public event Action OnPlayersWin;
+
+        public event Action<Player> OnPlayerDied;
+
         #endregion
 
         private void Awake()
@@ -50,5 +61,15 @@ namespace Control
         public static void PlayerJoined(int playerId, int controllerId) => _instance?.OnPlayerJoined?.Invoke(playerId, controllerId);
 
         public static void PlayerLeft(int playerId) => _instance?.OnPlayerLeft?.Invoke(playerId);
+
+        public static void CandleLit() => _instance?.OnCandleLit?.Invoke();
+
+        public static void RitualComplete(Ritual ritual) => _instance?.OnRitualComplete?.Invoke(ritual);
+
+        public static void DragonWins() => _instance?.OnDragonWins?.Invoke();
+
+        public static void PlayersWin() => _instance?.OnPlayersWin?.Invoke();
+
+        public static void PlayerDied(Player player) => _instance?.OnPlayerDied?.Invoke(player);
     }
 }
