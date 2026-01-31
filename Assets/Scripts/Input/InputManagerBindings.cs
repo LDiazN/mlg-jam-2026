@@ -43,7 +43,10 @@ namespace Input
             }
 
             if (!found)
+            {
                 manager.AddPlayer(context.control.device.deviceId);
+                Debug.Log($"Adding device: {context.control.device.deviceId} ({context.control.device.name})");
+            }
         }
     }
 }

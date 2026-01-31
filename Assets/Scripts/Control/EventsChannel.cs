@@ -25,6 +25,8 @@ namespace Control
         #region Events
 
         public event Action OnExampleEvent;
+
+        // Args: PlayerID, DeviceId
         public event Action<int,int> OnPlayerJoined;
 
         #endregion

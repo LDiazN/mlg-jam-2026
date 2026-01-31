@@ -6,7 +6,7 @@ namespace Scenes.Input
 {
     public class TestInput : BaseInputBindings
     {
-        [SerializeField] private int playerId;
+        public int playerId;
 
         private void Awake()
         {
@@ -26,9 +26,14 @@ namespace Scenes.Input
 
         private void Hello(InputAction.CallbackContext context)
         {
+            if (!IsMine(context))
+                return;
+
             var id = context.control.device.deviceId;
             if (context.performed)
                 Debug.Log($"I'm player {playerId} with device {id}");
         }
+
+        private bool IsMine(InputAction.CallbackContext context) => InputManager.IsMine(context, playerId);
     }
 }
