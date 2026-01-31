@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using Input;
 using MPlayer;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.Tilemaps;
 
 namespace Control
 {
@@ -8,8 +11,12 @@ namespace Control
     {
         #region Inspector Properties
 
+        [SerializeField] private List<Transform> dragonSpawners;
         [Min(0)]
         [SerializeField] private int maxCandles;
+        [SerializeField] private Player dragonPrefab;
+        [SerializeField] private Tilemap dragonCollision;
+        [SerializeField] private Tilemap ground;
 
         #endregion
 
@@ -33,6 +40,9 @@ namespace Control
         private void Start()
         {
             _currentPlayers = InputManager.TotalPlayers;
+
+            // Setup match now: init players and dragon
+            SetupDragon();
         }
 
         private void OnEnable()
@@ -96,6 +106,17 @@ namespace Control
         {
             if (_candlesRitualComplete)
                 EventsChannel.PlayersWin();
+        }
+
+        private void SetupDragon()
+        {
+            var spawner = dragonSpawners[Random.Range(0, dragonSpawners.Count)];
+            var dragon = Instantiate(dragonPrefab);
+            dragon.transform.position = spawner.transform.position;
+            dragon.type = PlayerType.Dragon;
+            dragon.playerId = InputManager.DragonPlayer;
+            dragon.Movement.collisionTilemap = dragonCollision;
+            dragon.Movement.groundTilemap = ground;
         }
     }
 

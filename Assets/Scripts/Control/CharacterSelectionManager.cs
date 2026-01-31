@@ -22,6 +22,7 @@ namespace Control
         [SerializeField] private TextMeshProUGUI pressToStart;
         [SerializeField] private Color greyedColor = Color.grey;
         [SerializeField] private string mainMenuScene = "MainMenu";
+        [SerializeField] private string gameScene = "Game";
 
         #endregion
 
@@ -100,7 +101,7 @@ namespace Control
                 pressToStart.rectTransform.DOShakePosition(0.25f, new Vector3(10, 0, 0)).Play();
             }
 
-            // TODO start game
+            SceneManager.LoadScene(gameScene);
         }
 
         public void GoBack()
