@@ -43,6 +43,8 @@ namespace Control
 
         public event Action<Player> OnPlayerDied;
 
+        public event Action<Item, Item> OnPlayerItemUpdate;
+
         #endregion
 
         private void Awake()
@@ -71,5 +73,7 @@ namespace Control
         public static void PlayersWin() => _instance?.OnPlayersWin?.Invoke();
 
         public static void PlayerDied(Player player) => _instance?.OnPlayerDied?.Invoke(player);
+
+        public static void PlayerItemUpdate(Player player, Item oldItem, Item newItem) => _instance?.OnPlayerItemUpdate?.Invoke(oldItem, newItem);
     }
 }

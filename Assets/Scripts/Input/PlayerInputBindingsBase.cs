@@ -21,6 +21,6 @@ namespace Input
 
         protected virtual void AwakeInit() {}
 
-        protected bool IsMine(InputAction.CallbackContext context) => InputManager.IsMine(context, _player.PlayerId);
+        protected bool IsMine(InputAction.CallbackContext context) => InputManager.IsMine(context, _player.playerId);
     }
 }
