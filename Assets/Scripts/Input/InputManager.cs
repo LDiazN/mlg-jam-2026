@@ -4,7 +4,6 @@ using Control;
 using QFSW.QC;
 using UnityEngine.InputSystem;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Input
 {
@@ -23,6 +22,10 @@ namespace Input
                  "Player = controlling character, UI is unresponsive")]
         [SerializeField] private InputMode defaultMode = InputMode.Player;
         [SerializeField] private bool clearControllersOnDestroy;
+        [Range(2,4)]
+        [SerializeField] private int maxPlayers = 4;
+
+        public int MaxPlayers => maxPlayers;
 
         #endregion
 
@@ -40,7 +43,8 @@ namespace Input
         public static Dictionary<int, int> PlayerToController => _playerToController;
 
         private static int _playerCounter = 1;
-        public static int CurrentPlayers => _playerToController.Count;
+        public static int TotalPlayers => _playerToController.Count;
+        public static int DragonPlayer = -1;
 
         #endregion
 
@@ -79,6 +83,7 @@ namespace Input
         {
             if (clearControllersOnDestroy)
                 _playerToController.Clear();
+            _playerCounter = 0;
         }
 
         public static void SetInputMode(InputMode newMode) => _instance?.SetInputModeInternal(newMode);
@@ -150,6 +155,15 @@ namespace Input
                 _playerToController.Remove(playerId);
                 EventsChannel.PlayerLeft(playerId);
             }
+        }
+
+        /// If already at max capacity
+        public static bool IsFull()
+        {
+            if (!_instance)
+                return false;
+
+            return TotalPlayers == _instance.MaxPlayers;
         }
 
         #region Commands
