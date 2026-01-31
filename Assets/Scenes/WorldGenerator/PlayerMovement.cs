@@ -10,9 +10,6 @@ namespace Scenes.WorldGenerator
         public int playerId;
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
-        public float cooldownTime = 1f;
-        public bool isCoolingDown = false;
-        private float _originalCooldownTime;
 
 
         private void Awake()
@@ -27,25 +24,14 @@ namespace Scenes.WorldGenerator
         private void Start()
         {
             Init();
-            _originalCooldownTime = cooldownTime;
         }
 
-        private void Update()
-        {
-            if (!isCoolingDown) return;
-            
-            cooldownTime -= Time.deltaTime;
-            if (cooldownTime <= 0f)
-            {
-                isCoolingDown = false;
-                cooldownTime = _originalCooldownTime;
-            }
-        }
+       
 
         private void CheckMovementOwnership(
             InputAction.CallbackContext context)
         {
-            if (isCoolingDown || !IsMine(context))
+            if (!IsMine(context))
                 return;
 
             Vector2 direction = context.ReadValue<Vector2>();
@@ -57,7 +43,6 @@ namespace Scenes.WorldGenerator
         {
             if (CanMove(direction))
             {
-                isCoolingDown = true;
                 transform.position += (Vector3)direction;
             }
         }
@@ -79,5 +64,14 @@ namespace Scenes.WorldGenerator
         private bool IsMine(
             InputAction.CallbackContext context) =>
             InputManager.IsMine(context, playerId);
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log("gola");
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

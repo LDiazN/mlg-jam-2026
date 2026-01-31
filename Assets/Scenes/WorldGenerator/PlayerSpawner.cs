@@ -9,7 +9,6 @@ namespace Scenes.WorldGenerator
         [SerializeField] private GameObject prefab;
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
-        public float cooldownTime = 1f;
 
         private void OnEnable()
         {
@@ -33,7 +32,6 @@ namespace Scenes.WorldGenerator
             player.playerId = playerid;
             player.collisionTilemap = collisionTilemap;
             player.groundTilemap = groundTilemap;
-            player.cooldownTime = cooldownTime;
         }
     }
 }
