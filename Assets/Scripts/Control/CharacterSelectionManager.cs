@@ -5,6 +5,7 @@ using Input;
 using TMPro;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace Control
@@ -20,7 +21,7 @@ namespace Control
         [SerializeField] private PlayerCard joinCard;
         [SerializeField] private TextMeshProUGUI pressToStart;
         [SerializeField] private Color greyedColor = Color.grey;
-
+        [SerializeField] private string mainMenuScene = "MainMenu";
 
         #endregion
 
@@ -106,6 +107,8 @@ namespace Control
         {
             InputManager.DragonPlayer = -1;
             InputManager.PlayerToController.Clear();
+
+            SceneManager.LoadScene(mainMenuScene);
         }
     }
 }

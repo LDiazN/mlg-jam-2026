@@ -1347,6 +1347,7 @@ MonoBehaviour:
   joinCard: {fileID: 2901643041495634176}
   pressToStart: {fileID: 785782611}
   greyedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  mainMenuScene: MainMenuDefinitive
 --- !u!114 &2045887544
 MonoBehaviour:
   m_ObjectHideFlags: 0

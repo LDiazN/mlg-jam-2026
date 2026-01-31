@@ -15,9 +15,12 @@ namespace UI
             _selectionManager = GetComponent<CharacterSelectionManager>();
 
             var start = controls.FindActionMap("UI").FindAction("Start");
+            var select = controls.FindActionMap("UI").FindAction("Select");
+
             SetHandlers(new()
             {
-                (start, StartGame)
+                (start, StartGame),
+                (select, GoBack)
             });
         }
 
