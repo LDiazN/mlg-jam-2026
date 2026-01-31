@@ -44,6 +44,7 @@ namespace Input
 
         private static int _playerCounter = 1;
         public static int TotalPlayers => _playerToController.Count;
+        public static int DragonPlayer = -1;
 
         #endregion
 

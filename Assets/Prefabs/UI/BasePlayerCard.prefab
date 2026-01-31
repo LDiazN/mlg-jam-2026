@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 1267325865360943969}
   - component: {fileID: 7555196594157735383}
   - component: {fileID: 1806482225856276959}
+  - component: {fileID: 8171459016079351319}
   m_Layer: 5
   m_Name: BasePlayerCard
   m_TagString: Untagged
@@ -378,3 +379,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758cd043e0fa0434c88119b0c172cd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCard
+  label: {fileID: 8683344191477549682}
+  characterSprites: []
+  iconObj: {fileID: 3367193572046822946}
+  playerId: -1
+--- !u!114 &8171459016079351319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452511869822361476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8de6842126b3544a0fe2004539d396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.JoinCardUIBindings
+  controls: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  inputStartsActive: 1

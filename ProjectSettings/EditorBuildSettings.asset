@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuDefinitive.unity
     guid: 7b0aa46efee381243b4bc4279a25264b
   - enabled: 1
-    path: Assets/Scenes/PlayerMenuDefinitive.unity
+    path: Assets/Scenes/Menus/PlayerMenuDefinitive.unity
     guid: 0ff7505cb43a2fa4ea1e4d3718b6ba7c
   - enabled: 1
     path: Assets/Scenes/CinematicDefinitive.unity
