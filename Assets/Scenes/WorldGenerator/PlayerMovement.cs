@@ -1,22 +1,23 @@
 using Input;
+using MPlayer;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
 namespace Scenes.WorldGenerator
 {
+    [RequireComponent(typeof(Player))]
     public class PlayerMovement : BaseInputBindings
     {
-        public int playerId;
+        public Player player;
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
-        public float cooldownTime = 1f;
-        public bool isCoolingDown = false;
-        private float _originalCooldownTime;
 
 
         private void Awake()
         {
+            player = GetComponent<Player>();
+
             var move = controls.FindActionMap("Player").FindAction("Move");
             SetHandlers(new()
             {
@@ -27,25 +28,13 @@ namespace Scenes.WorldGenerator
         private void Start()
         {
             Init();
-            _originalCooldownTime = cooldownTime;
         }
 
-        private void Update()
-        {
-            if (!isCoolingDown) return;
-            
-            cooldownTime -= Time.deltaTime;
-            if (cooldownTime <= 0f)
-            {
-                isCoolingDown = false;
-                cooldownTime = _originalCooldownTime;
-            }
-        }
 
         private void CheckMovementOwnership(
             InputAction.CallbackContext context)
         {
-            if (isCoolingDown || !IsMine(context))
+            if (!context.performed || !IsMine(context))
                 return;
 
             Vector2 direction = context.ReadValue<Vector2>();
@@ -57,7 +46,6 @@ namespace Scenes.WorldGenerator
         {
             if (CanMove(direction))
             {
-                isCoolingDown = true;
                 transform.position += (Vector3)direction;
             }
         }
@@ -78,6 +66,15 @@ namespace Scenes.WorldGenerator
 
         private bool IsMine(
             InputAction.CallbackContext context) =>
-            InputManager.IsMine(context, playerId);
+            InputManager.IsMine(context, player.playerId);
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log("gola");
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

@@ -27,7 +27,8 @@ namespace UI
         private void StartGame(InputAction.CallbackContext context)
         {
             Debug.Log("Trying to start game...");
-            _selectionManager.StartGame();
+            if(context.performed)
+                _selectionManager.StartGame();
         }
 
         private void GoBack(InputAction.CallbackContext context)

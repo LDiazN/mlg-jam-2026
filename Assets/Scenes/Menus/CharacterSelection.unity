@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2454504049164518353, guid: 021f5ff0af3b16345bdc26dd1159ec01, type: 3}
       propertyPath: clearControllersOnDestroy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3196922116485465692, guid: 021f5ff0af3b16345bdc26dd1159ec01, type: 3}
       propertyPath: collectPlayers
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press start to play
+  m_text: Hold start to play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9d4fe7a359988f44829881a316153e6, type: 2}
   m_sharedMaterial: {fileID: -6537795288994199039, guid: c9d4fe7a359988f44829881a316153e6, type: 2}
@@ -1348,6 +1348,7 @@ MonoBehaviour:
   pressToStart: {fileID: 785782611}
   greyedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   mainMenuScene: MainMenuDefinitive
+  gameScene: Game
 --- !u!114 &2045887544
 MonoBehaviour:
   m_ObjectHideFlags: 0
