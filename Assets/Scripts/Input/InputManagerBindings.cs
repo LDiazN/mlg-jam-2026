@@ -38,7 +38,7 @@ namespace Input
 
         private void HandleAny(InputAction.CallbackContext context)
         {
-            if (!collectPlayers)
+            if (!collectPlayers || InputManager.TotalPlayers == manager.MaxPlayers)
                 return;
 
             bool found = false;
