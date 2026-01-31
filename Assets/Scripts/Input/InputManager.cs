@@ -40,6 +40,7 @@ namespace Input
         public static Dictionary<int, int> PlayerToController => _playerToController;
 
         private static int _playerCounter = 1;
+        public static int CurrentPlayers => _playerToController.Count;
 
         #endregion
 

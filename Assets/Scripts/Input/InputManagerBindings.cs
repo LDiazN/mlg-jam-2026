@@ -6,6 +6,12 @@ namespace Input
     [RequireComponent(typeof(InputManager))]
     public class InputManagerBindings : BaseInputBindings
     {
+        #region Inspector Properties
+
+        [SerializeField] private bool collectPlayers;
+
+        #endregion
+
         #region Internal State
 
         private InputManager manager;
@@ -32,6 +38,9 @@ namespace Input
 
         private void HandleAny(InputAction.CallbackContext context)
         {
+            if (!collectPlayers)
+                return;
+
             bool found = false;
             foreach (var (player, device) in InputManager.PlayerToController)
             {
