@@ -29,6 +29,9 @@ namespace Control
         // Args: PlayerID, DeviceId
         public event Action<int,int> OnPlayerJoined;
 
+        // Args: Player ID
+        public event Action<int> OnPlayerLeft;
+
         #endregion
 
         private void Awake()
@@ -44,6 +47,8 @@ namespace Control
 
         public static void ExampleEvent() => _instance?.OnExampleEvent?.Invoke();
 
-        public static void NewPlayerJoined(int playerId, int controllerId) => _instance?.OnPlayerJoined?.Invoke(playerId, controllerId);
+        public static void PlayerJoined(int playerId, int controllerId) => _instance?.OnPlayerJoined?.Invoke(playerId, controllerId);
+
+        public static void PlayerLeft(int playerId) => _instance?.OnPlayerLeft?.Invoke(playerId);
     }
 }

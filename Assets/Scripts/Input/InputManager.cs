@@ -37,7 +37,8 @@ namespace Input
 
         // Player ID to device id playerid to controllerid
         private static readonly Dictionary<int, int> _playerToController = new();
-        public Dictionary<int, int> PlayerToController => _playerToController;
+        public static Dictionary<int, int> PlayerToController => _playerToController;
+
         private static int _playerCounter = 1;
 
         #endregion
@@ -133,11 +134,21 @@ namespace Input
             return v == context.control.device.deviceId;
         }
 
-        public void AddPlayer(int deviceId)
+        public static void AddPlayer(int deviceId)
         {
             var playerId = _playerCounter++;
             _playerToController[playerId] = deviceId;
-            EventsChannel.NewPlayerJoined(playerId, deviceId);
+            EventsChannel.PlayerJoined(playerId, deviceId);
+        }
+
+        public static void RemovePlayer(int playerId)
+        {
+            var isHere = _playerToController.TryGetValue(playerId, out int device);
+            if (isHere)
+            {
+                _playerToController.Remove(playerId);
+                EventsChannel.PlayerLeft(playerId);
+            }
         }
 
         #region Commands

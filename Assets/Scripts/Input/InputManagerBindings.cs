@@ -33,7 +33,7 @@ namespace Input
         private void HandleAny(InputAction.CallbackContext context)
         {
             bool found = false;
-            foreach (var (player, device) in manager.PlayerToController)
+            foreach (var (player, device) in InputManager.PlayerToController)
             {
                 if (device == context.control.device.deviceId)
                 {
@@ -44,7 +44,7 @@ namespace Input
 
             if (!found)
             {
-                manager.AddPlayer(context.control.device.deviceId);
+                InputManager.AddPlayer(context.control.device.deviceId);
                 Debug.Log($"Adding device: {context.control.device.deviceId} ({context.control.device.name})");
             }
         }
