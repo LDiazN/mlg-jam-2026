@@ -65,7 +65,6 @@ namespace Scenes.WorldGenerator
         private bool CanMove(
             Vector2 direction)
         {
-            // Implement movement logic here
             Vector3Int position =
                 groundTilemap.WorldToCell(transform.position + (Vector3)direction);
 

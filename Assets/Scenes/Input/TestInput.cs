@@ -26,8 +26,8 @@ namespace Scenes.Input
 
         private void Hello(InputAction.CallbackContext context)
         {
-            /*if (!IsMine(context))
-                return;*/
+            if (!IsMine(context))
+                return;
 
             var id = context.control.device.deviceId;
             if (context.performed)

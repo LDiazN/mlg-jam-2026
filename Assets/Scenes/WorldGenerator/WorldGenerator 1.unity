@@ -2850,6 +2850,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scenes.WorldGenerator.PlayerSpawner
   prefab: {fileID: 5930224318558927577, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+  groundTilemap: {fileID: 957440205}
+  collisionTilemap: {fileID: 98402571}
+  cooldownTime: 0.1
 --- !u!4 &234886537
 Transform:
   m_ObjectHideFlags: 0
@@ -2865,6 +2868,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &504092486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.60449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.48744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232687567696933671, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797850942858540773, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
+      propertyPath: m_Name
+      value: EventsManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29e72dbcecd8ef64990220b4a858965e, type: 3}
 --- !u!1 &629906187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2877,7 +2937,6 @@ GameObject:
   - component: {fileID: 629906189}
   - component: {fileID: 629906188}
   - component: {fileID: 629906191}
-  - component: {fileID: 629906192}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3003,24 +3062,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &629906192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629906187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6cda23e31d8423ea961943034b1c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WorldGenerator
-  grid: {fileID: 1840589335}
-  tilesVertically: 30
-  pixelsPerUnit: 32
-  cellSize: 1
-  tilemap: {fileID: 98402571}
-  tilePrefab: {fileID: 11400000, guid: 14eb72df55bd24835b82b8f2fe440cfc, type: 2}
 --- !u!1 &957440202
 GameObject:
   m_ObjectHideFlags: 0
@@ -12405,3 +12446,4 @@ SceneRoots:
   - {fileID: 1741538184}
   - {fileID: 1607239770}
   - {fileID: 234886537}
+  - {fileID: 504092486}
