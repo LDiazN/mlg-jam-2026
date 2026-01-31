@@ -8,8 +8,12 @@ namespace Scenes.WorldGenerator
     public class PlayerMovement : BaseInputBindings
     {
         public int playerId;
-        [SerializeField] private Tilemap groundTilemap;
-        [SerializeField] private Tilemap collisionTilemap;
+        public Tilemap groundTilemap;
+        public Tilemap collisionTilemap;
+        public float cooldownTime = 1f;
+        public bool isCoolingDown = false;
+        private float _originalCooldownTime;
+
 
         private void Awake()
         {
@@ -18,19 +22,30 @@ namespace Scenes.WorldGenerator
             {
                 (move, CheckMovementOwnership)
             });
-            Debug.Log("here?");
         }
-        
+
         private void Start()
         {
             Init();
+            _originalCooldownTime = cooldownTime;
+        }
+
+        private void Update()
+        {
+            if (!isCoolingDown) return;
+            
+            cooldownTime -= Time.deltaTime;
+            if (cooldownTime <= 0f)
+            {
+                isCoolingDown = false;
+                cooldownTime = _originalCooldownTime;
+            }
         }
 
         private void CheckMovementOwnership(
             InputAction.CallbackContext context)
         {
-            Debug.Log("CheckMovementOwnership" + context.control.device.deviceId);
-            if (!IsMine(context))
+            if (isCoolingDown || !IsMine(context))
                 return;
 
             Vector2 direction = context.ReadValue<Vector2>();
@@ -40,9 +55,10 @@ namespace Scenes.WorldGenerator
         private void Move(
             Vector2 direction)
         {
-            if (direction != Vector2.zero)
+            if (CanMove(direction))
             {
-                CanMove(direction);
+                isCoolingDown = true;
+                transform.position += (Vector3)direction;
             }
         }
 
