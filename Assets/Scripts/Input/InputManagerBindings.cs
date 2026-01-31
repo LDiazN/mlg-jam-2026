@@ -23,11 +23,13 @@ namespace Input
             manager = GetComponent<InputManager>();
             var submit = controls.FindActionMap("UI").FindAction("Submit");
             var cancel = controls.FindActionMap("UI").FindAction("Cancel");
+            var jump = controls.FindActionMap("Player").FindAction("Jump");
 
             SetHandlers(new()
             {
                 (submit, HandleAny),
-                (cancel, HandleAny)
+                (cancel, HandleAny),
+                (jump, HandleAny)
             });
         }
 
