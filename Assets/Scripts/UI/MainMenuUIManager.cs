@@ -43,23 +43,13 @@ public class MainMenuUIManager : MonoBehaviour
     }
     public void OpenOptionMenu()
     {
-        /*creditsMenu.SetActive(false);
+        creditsMenu.SetActive(false);
         instructionsMenu.SetActive(false);
         glossaryMenu.SetActive(false);
-        mainMenu.SetActive(false);*/
-        EventSystem.current.transform.DOPunchScale(
-            EventSystem.current.transform.localScale * 1.2f, 0.25f
-            ).OnComplete(() =>
-            {
-                creditsMenu.SetActive(false);
-                instructionsMenu.SetActive(false);
-                glossaryMenu.SetActive(false);
-                mainMenu.SetActive(false);
-                optionMenu.SetActive(true);
-                SelectFirstSelectable(optionMenu);
-            });
-        /*optionMenu.SetActive(true);
-        SelectFirstSelectable(optionMenu);*/
+        mainMenu.SetActive(false);
+        optionMenu.SetActive(true);
+        SelectFirstSelectable(optionMenu);
+
     }
     public void CloseOptionMenu()
     {
@@ -129,6 +119,6 @@ public class MainMenuUIManager : MonoBehaviour
     }
     public void OpenPlayerMenu()
     {
-        SceneManager.LoadScene("PlayerMenuDefinitive");
+        SceneManager.LoadScene("CharacterSelection");
     }
 }
