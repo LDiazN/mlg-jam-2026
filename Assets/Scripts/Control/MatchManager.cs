@@ -32,7 +32,7 @@ namespace Control
 
         private void Start()
         {
-            _currentPlayers = InputManager.CurrentPlayers;
+            _currentPlayers = InputManager.TotalPlayers;
         }
 
         private void OnEnable()
