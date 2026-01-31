@@ -19,6 +19,7 @@ public class MainMenuUIManager : MonoBehaviour
         creditsMenu.SetActive(false);
         instructionsMenu.SetActive(false);
         creditsMenu.SetActive(false);
+        glossaryMenu.SetActive(false);
         mainMenu.SetActive(true);
         SelectFirstSelectable(mainMenu);
     }

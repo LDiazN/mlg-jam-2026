@@ -3,19 +3,32 @@ using UnityEngine.UI;
 
 public class ImageListUIManager : MonoBehaviour
 {
-    [SerializeField] private Image[] imageList;
-    private int imageCount;
+    [SerializeField] private Sprite[] spriteList;
     private Image imageShow;
+    private int imageCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        imageShow = GetComponentInChildren<Image>();
         imageCount = 0;
-        imageShow = imageList[imageCount];
+        imageShow.sprite = spriteList[imageCount];
+        Debug.Log("Longitud de sprites: " + spriteList.Length);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PreviousButtonInstruction()
     {
-        
+        Debug.Log("Imagen cambiada");
+        imageCount = (imageCount - 1) % spriteList.Length;
+        if(imageCount < 0)
+        {
+            imageCount = spriteList.Length - 1;
+        }
+        imageShow.sprite = spriteList[imageCount];
+    }
+    public void NextButtonInstruction()
+    {
+        Debug.Log("Imagen cambiada");
+        imageCount = (imageCount + 1) % spriteList.Length;
+        imageShow.sprite = spriteList[imageCount];
     }
 }
