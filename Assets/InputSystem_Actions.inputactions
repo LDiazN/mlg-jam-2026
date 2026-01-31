@@ -620,7 +620,7 @@
                     "id": "234602e5-92b9-45c8-b2f1-7b2d8285a718",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 },
                 {
@@ -1056,7 +1056,7 @@
                     "name": "",
                     "id": "fa968d93-d59c-4508-8e5b-d5e4b97fa6c4",
                     "path": "<Gamepad>/start",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Gamepad",
                     "action": "Start",
@@ -1067,7 +1067,7 @@
                     "name": "",
                     "id": "aca7428c-7990-48d9-8ebf-6a37c392fd5c",
                     "path": "<Keyboard>/enter",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "",
                     "action": "Start",

@@ -1,4 +1,5 @@
 using Control;
+using MPlayer;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -27,11 +28,11 @@ namespace Scenes.WorldGenerator
             int deviceid)
         {
             var obj = Instantiate(prefab);
-            var player = obj.GetComponent<PlayerMovement>();
-            
+            var player = obj.GetComponent<Player>();
+
             player.playerId = playerid;
-            player.collisionTilemap = collisionTilemap;
-            player.groundTilemap = groundTilemap;
+            player.Movement.collisionTilemap = collisionTilemap;
+            player.Movement.groundTilemap = groundTilemap;
         }
     }
 }

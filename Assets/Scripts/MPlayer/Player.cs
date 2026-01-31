@@ -1,14 +1,28 @@
+using System;
 using Control;
+using Scenes.WorldGenerator;
 using UnityEngine;
 
 namespace MPlayer
 {
+    [RequireComponent(typeof(PlayerMovement))]
     public class Player : MonoBehaviour
     {
         #region Internal State
 
         public int playerId;
         public Item item = Item.None;
+        public PlayerType type;
+        private PlayerMovement _movement;
+        public PlayerMovement Movement => _movement;
+
+
+        #endregion
+
+        private void Awake()
+        {
+            _movement = GetComponent<PlayerMovement>();
+        }
 
         public void SetItem(Item newItem)
         {
@@ -16,8 +30,6 @@ namespace MPlayer
             item = newItem;
             EventsChannel.PlayerItemUpdate(this, old, newItem);
         }
-
-        #endregion
     }
 
     public enum Item
@@ -26,5 +38,11 @@ namespace MPlayer
         Coin,
         Broom,
         None,
+    }
+
+    public enum PlayerType
+    {
+        Dragon,
+        Normal
     }
 }
