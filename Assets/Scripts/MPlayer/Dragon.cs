@@ -10,12 +10,10 @@ namespace MPlayer
     {
         #region Inspector Properties
 
-        [Min(0)]
-        [SerializeField] private int MaxCharge = 100;
+        [Min(0)] [SerializeField] private int MaxCharge = 100;
 
-        [Tooltip("How many units of energy to lose per second once in rage mode")]
-        [Min(0)]
-        [SerializeField] private int unitsPerSecond = 5;
+        [Tooltip("How many units of energy to lose per second once in rage mode")] [Min(0)] [SerializeField]
+        private int unitsPerSecond = 5;
 
         [SerializeField] private GameObject rageTrail;
         [SerializeField] private GameObject normalTrail;
@@ -64,15 +62,25 @@ namespace MPlayer
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(
+            Collider2D other)
         {
             var dragonItem = other.gameObject.GetComponent<DragonItem>();
-            if (!dragonItem)
-                return;
-            TakeItem(dragonItem);
+
+            if (dragonItem)
+            {
+                TakeItem(dragonItem);
+            }
+            
+            var player = other.gameObject.GetComponent<Player>();
+            if (player && _currentState == State.Rage)
+            {
+                Destroy(player.gameObject); 
+            }
         }
 
-        private void TakeItem(DragonItem item)
+        private void TakeItem(
+            DragonItem item)
         {
             _currentCharge = Mathf.Min(_currentCharge + item.energy, MaxCharge);
             Destroy(item.gameObject);
