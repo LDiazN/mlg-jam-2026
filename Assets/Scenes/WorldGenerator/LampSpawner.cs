@@ -7,33 +7,33 @@ namespace WorldGenerator.LanternSpawner
     public class LampSpawner : MonoBehaviour
     {
         public int quantity = 2;
-        public GameObject lanternPrefab;
+        public GameObject lampPrefab;
 
         private void Awake()
         {
-            
+
             // find all by LanternSpawner tag
             GameObject[] spawners = GameObject.FindGameObjectsWithTag("LampSpawner");
 
-            
-            if(quantity > spawners.Length)
+
+            if (quantity > spawners.Length)
             {
                 quantity = spawners.Length;
             }
-            
+
             HashSet<int> addedSpawners = new HashSet<int>();
             while (addedSpawners.Count < quantity)
             {
                 int randomIndex = Random.Range(0, spawners.Length);
-                
-                if(addedSpawners.Contains(randomIndex)) continue;
-                
+
+                if (addedSpawners.Contains(randomIndex)) continue;
+
                 addedSpawners.Add(randomIndex);
-                
+
                 Vector3 spawnPosition = spawners[randomIndex].transform.position;
-                Instantiate(lanternPrefab, spawnPosition, Quaternion.identity);
+                Instantiate(lampPrefab, spawnPosition, Quaternion.identity);
             }
-            
+
             foreach (GameObject spawner in spawners)
             {
                 Destroy(spawner);
