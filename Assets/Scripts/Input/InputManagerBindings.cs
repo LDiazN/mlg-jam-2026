@@ -44,9 +44,9 @@ namespace Input
                 return;
 
             bool found = false;
-            foreach (var (player, device) in InputManager.PlayerToController)
+            foreach (var (player, device) in InputManager.PlayerToData)
             {
-                if (device == context.control.device.deviceId)
+                if (device.ControllerId == context.control.device.deviceId)
                 {
                     found = true;
                     break;

@@ -1,4 +1,5 @@
 using Control;
+using Input;
 using MPlayer;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -30,7 +31,9 @@ namespace Scenes.WorldGenerator
             channel.OnPlayerJoined -= OnPlayerJoined;
         }
 
-        private void OnPlayerJoined(int playerid, int deviceid)
+        private void OnPlayerJoined(
+            int playerid,
+            InputManager.PlayerData data)
         {
             if (dragonPrefab == null || playerPrefab == null)
             {

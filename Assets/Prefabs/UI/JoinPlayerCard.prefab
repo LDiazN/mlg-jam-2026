@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1806482225856276959, guid: 37a5e5acb2dad614eb8c8d362fdd843a, type: 3}
+      propertyPath: masks
+      value: 
+      objectReference: {fileID: 11400000, guid: 144aca181a00c954fad1345b11ac0b5a, type: 2}
     - target: {fileID: 2983147190829103723, guid: 37a5e5acb2dad614eb8c8d362fdd843a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -90,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8452511869822361476, guid: 37a5e5acb2dad614eb8c8d362fdd843a, type: 3}
       propertyPath: m_Name
-      value: BasePlayerCard
+      value: JoinPlayerCard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
