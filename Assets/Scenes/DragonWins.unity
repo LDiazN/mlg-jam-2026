@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98d2fec7ef124048825d6af1f91daae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinScreen
-  MainMenu: MainMenuDefinitive
+  MainMenu: CharacterSelection
   timeToWait: 5
 --- !u!4 &1708976645
 Transform:

@@ -79,7 +79,7 @@ namespace MPlayer
             {
                 Player playerComp = player.GetComponent<Player>();
                 EventsChannel.PlayerDied(playerComp);
-                Destroy(player.gameObject);
+                Destroy(player.gameObject, 0.1f);
             }
         }
 
