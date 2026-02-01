@@ -22,12 +22,13 @@ namespace Scenes.WorldGenerator
             foreach (var kvp in InputManager.PlayerToData)
             {
                 int playerId = kvp.Key;
+                Sprite mask = masks.masks[kvp.Value.MaskIndex];
+                
                 if(kvp.Value.IsDragon)
                 {
                     continue;
                 }
                 
-
                 GameObject obj = Instantiate(
                     playerPrefab,
                     playerSpawnPositions[playerCount].transform.position,
@@ -39,8 +40,12 @@ namespace Scenes.WorldGenerator
                 player.playerId = playerId;
                 player.Movement.collisionTilemap = collisionTilemap;
                 player.Movement.groundTilemap = groundTilemap;
-                player.bar = masks.masks[playerCount];
-                
+
+                if (mask)
+                {
+                    player.bar = mask;
+
+                }
 
                 playerCount++;
                 obj.SetActive(true);

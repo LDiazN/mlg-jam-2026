@@ -27,11 +27,16 @@ namespace MPlayer
             _movement = GetComponent<PlayerMovement>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
-        
-        
+
+
         private void Start()
         {
             _originalColor = _spriteRenderer.color;
+
+            if (bar != null)
+            {
+                _spriteRenderer.sprite = bar;
+            }
         }
 
         public void SetItem(
@@ -41,7 +46,7 @@ namespace MPlayer
             item = newItem;
             EventsChannel.PlayerItemUpdate(this, old, newItem);
         }
-        
+
         private void OnEnable()
         {
             var channel = EventsChannel.Get();
@@ -61,7 +66,7 @@ namespace MPlayer
             channel.OnDragonRageStarted -= OnDragonRageStarted;
             channel.OnDragonRageFinished -= OnDragonRageFinished;
         }
-        
+
         private void OnDragonRageFinished()
         {
             _spriteRenderer.color = _originalColor;
@@ -72,8 +77,6 @@ namespace MPlayer
             _spriteRenderer.color = rageColor;
         }
     }
-    
-    
 
 
     public enum Item
