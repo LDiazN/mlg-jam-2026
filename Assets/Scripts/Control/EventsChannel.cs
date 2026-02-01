@@ -44,7 +44,7 @@ namespace Control
 
         public event Action<Player> OnPlayerDied;
 
-        public event Action<Item, Item> OnPlayerItemUpdate;
+        public event Action<Player, Item, Item> OnPlayerItemUpdate;
 
         public event Action<float> OnDragonChargeChanged;
 
@@ -81,7 +81,7 @@ namespace Control
 
         public static void PlayerDied(Player player) => _instance?.OnPlayerDied?.Invoke(player);
 
-        public static void PlayerItemUpdate(Player player, Item oldItem, Item newItem) => _instance?.OnPlayerItemUpdate?.Invoke(oldItem, newItem);
+        public static void PlayerItemUpdate(Player player, Item oldItem, Item newItem) => _instance?.OnPlayerItemUpdate?.Invoke(player, oldItem, newItem);
 
         // Dragon
         // new charge goes from 0 to 1
