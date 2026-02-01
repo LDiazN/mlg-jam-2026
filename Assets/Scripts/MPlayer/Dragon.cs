@@ -75,6 +75,8 @@ namespace MPlayer
             var player = other.gameObject.GetComponent<Player>();
             if (player && _currentState == State.Rage)
             {
+                Player playerComp = player.GetComponent<Player>();
+                EventsChannel.PlayerDied(playerComp);
                 Destroy(player.gameObject); 
             }
         }
