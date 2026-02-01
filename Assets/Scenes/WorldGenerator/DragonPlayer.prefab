@@ -460,11 +460,6 @@ MonoBehaviour:
   inputStartsActive: 1
   groundTilemap: {fileID: 0}
   collisionTilemap: {fileID: 0}
---- !u!1 &4874580267457080003 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5930224318558927577, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
-  m_PrefabInstance: {fileID: 1290738089538228250}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5477744642288294879
 MonoBehaviour:
   m_ObjectHideFlags: 0
