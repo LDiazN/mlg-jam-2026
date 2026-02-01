@@ -45,6 +45,12 @@ namespace Control
 
         public event Action<Item, Item> OnPlayerItemUpdate;
 
+        public event Action<float> OnDragonChargeChanged;
+
+        public event Action OnDragonRageStarted;
+
+        public event Action OnDragonRageFinished;
+
         #endregion
 
         private void Awake()
@@ -75,5 +81,13 @@ namespace Control
         public static void PlayerDied(Player player) => _instance?.OnPlayerDied?.Invoke(player);
 
         public static void PlayerItemUpdate(Player player, Item oldItem, Item newItem) => _instance?.OnPlayerItemUpdate?.Invoke(oldItem, newItem);
+
+        // Dragon
+        // new charge goes from 0 to 1
+        public static void DragonChargeChanged(float newCharge) => _instance?.OnDragonChargeChanged?.Invoke(newCharge);
+
+        public static void DragonRageStarted() => _instance?.OnDragonRageStarted?.Invoke();
+
+        public static void DragonRageFinished() => _instance?.OnDragonRageFinished?.Invoke();
     }
 }
