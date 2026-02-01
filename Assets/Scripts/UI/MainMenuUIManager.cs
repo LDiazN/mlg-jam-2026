@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -48,6 +49,7 @@ public class MainMenuUIManager : MonoBehaviour
         mainMenu.SetActive(false);
         optionMenu.SetActive(true);
         SelectFirstSelectable(optionMenu);
+
     }
     public void CloseOptionMenu()
     {
@@ -117,6 +119,6 @@ public class MainMenuUIManager : MonoBehaviour
     }
     public void OpenPlayerMenu()
     {
-        SceneManager.LoadScene("PlayerMenuDefinitive");
+        SceneManager.LoadScene("CharacterSelection");
     }
 }

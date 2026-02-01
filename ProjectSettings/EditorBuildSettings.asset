@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuDefinitive.unity
     guid: 7b0aa46efee381243b4bc4279a25264b
   - enabled: 1
-    path: Assets/Scenes/PlayerMenuDefinitive.unity
+    path: Assets/Scenes/Menus/CharacterSelection.unity
     guid: 0ff7505cb43a2fa4ea1e4d3718b6ba7c
   - enabled: 1
     path: Assets/Scenes/CinematicDefinitive.unity
     guid: 0b26136bb2fca8b4ca64516df64b180c
+  - enabled: 1
+    path: Assets/Scenes/Game/Game.unity
+    guid: b806adc1dc331374e9e3fac580806df7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
