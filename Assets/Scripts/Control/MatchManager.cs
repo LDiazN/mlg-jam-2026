@@ -3,6 +3,7 @@ using Input;
 using MPlayer;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
@@ -84,7 +85,7 @@ namespace Control
         private void OnPlayerDied(Player obj)
         {
             _currentPlayers--;
-            if (_currentPlayers == 0)
+            if (_currentPlayers == 1)
                 DragonWins();
         }
 
@@ -95,28 +96,22 @@ namespace Control
             {
                 _candlesRitualComplete = true;
                 EventsChannel.RitualComplete(Ritual.Candles);
+                PlayersWin();
             }
 
             CheckPlayersWin();
         }
 
-        private void PlayerDied(Player player)
-        {
-            _currentPlayers--;
-            if (_currentCandles == 0)
-                DragonWins();
-        }
-
         private void PlayersWin()
         {
             EventsChannel.PlayersWin();
-            // TODO
+            SceneManager.LoadScene("PlayersWin");
         }
 
         private void DragonWins()
         {
             EventsChannel.DragonWins();
-            // TODO
+            SceneManager.LoadScene("DragonWins");
         }
 
         private void CheckPlayersWin()

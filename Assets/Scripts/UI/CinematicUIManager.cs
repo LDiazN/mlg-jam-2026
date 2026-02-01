@@ -40,7 +40,7 @@ public class CinematicUIManager : MonoBehaviour
                 imageCount++;
                 if(imageCount >= imageList.Length)
                 {
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("MainMenuDefinitive");
                 }
             }).Play();
         
