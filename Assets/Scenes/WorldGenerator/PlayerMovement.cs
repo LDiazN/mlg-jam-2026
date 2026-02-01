@@ -12,6 +12,7 @@ namespace Scenes.WorldGenerator
         private Player player;
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
+        private Vector2 _lastDirection;
 
 
         private void Awake()
@@ -38,7 +39,13 @@ namespace Scenes.WorldGenerator
                 return;
 
             Vector2 direction = context.ReadValue<Vector2>();
-            Move(direction);
+            // Edge-detect: step once when transitioning from idle -> input
+            bool wasIdle = _lastDirection == Vector2.zero;
+            _lastDirection = direction;
+            if (wasIdle && direction != Vector2.zero)
+            {
+                Move(direction);
+            }
         }
 
         private void Move(
