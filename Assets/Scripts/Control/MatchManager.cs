@@ -159,7 +159,10 @@ namespace Control
 
         private void SetupPlayers()
         {
+            foreach (var (playerId, data) in InputManager.PlayerToData)
+            {
 
+            }
         }
     }
 
