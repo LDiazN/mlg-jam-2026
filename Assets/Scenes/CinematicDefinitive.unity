@@ -585,15 +585,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2510896228475801031, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Name
-      value: Image (2)
+      value: equilibrio
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510896228475801031, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3537469141392178889, guid: 22a4860dd4686459692f720168c2ff5e, type: 3}
+    - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Color.b
-      value: 0.7123699
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5945405413793745711, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Pivot.x
@@ -848,19 +860,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2510896228475801031, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Name
-      value: Image (1)
+      value: dragon
       objectReference: {fileID: 0}
     - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -956083598533668704, guid: 901f6b3cada3c4df3b2fc52be2f3c508, type: 3}
+    - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.6666667
       objectReference: {fileID: 0}
     - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Color.g
-      value: 0.9622642
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Color.r
-      value: 0.06640931
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5945405413793745711, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Pivot.x
@@ -973,11 +989,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2510896228475801031, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Name
-      value: Image
+      value: monjes
       objectReference: {fileID: 0}
     - target: {fileID: 2510896228475801031, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8281360256619709390, guid: dfa90b105db80443c8189cfd18809dc8, type: 3}
+    - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170172458315209958, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6666667
       objectReference: {fileID: 0}
     - target: {fileID: 5945405413793745711, guid: 36629a20472bf5b45a7a9df69f9e8f6b, type: 3}
       propertyPath: m_Pivot.x
@@ -1393,10 +1425,10 @@ PrefabInstance:
       addedObject: {fileID: 705980141}
     - targetCorrespondingSourceObject: {fileID: 2638952836449800311, guid: 89b3491e185525842976e09482818b35, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1325397988}
+      addedObject: {fileID: 1990046890}
     - targetCorrespondingSourceObject: {fileID: 2638952836449800311, guid: 89b3491e185525842976e09482818b35, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1990046890}
+      addedObject: {fileID: 1325397988}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 245797552653078658, guid: 89b3491e185525842976e09482818b35, type: 3}
       insertIndex: -1
@@ -1425,10 +1457,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CinematicUIManager
   imageList:
-  - {fileID: 1990046891}
-  - {fileID: 1325397989}
   - {fileID: 705980142}
-  imagePerSecond: 3
+  - {fileID: 1325397989}
+  - {fileID: 1990046891}
+  imagePerSecond: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
