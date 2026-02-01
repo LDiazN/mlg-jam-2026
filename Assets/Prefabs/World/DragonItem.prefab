@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7333104199873379567}
   - component: {fileID: 7539596727944992054}
   - component: {fileID: 3205858163926448063}
+  - component: {fileID: 6676145082030541636}
   m_Layer: 0
   m_Name: DragonItem
   m_TagString: Untagged
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3071528944909066289, guid: 9e1959c37ed7be94489285da10849bf1, type: 3}
+  m_Sprite: {fileID: 2127881065977384006, guid: 02b4a603df9f9324fb6561c5fd972a87, type: 3}
   m_Color: {r: 0, g: 0.1481998, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335bc451cb889ea48839fc3a997a268d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragonItem
+  energy: 20
 --- !u!61 &3205858163926448063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,9 +143,9 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.2, y: 0.2, z: 0.2, w: 0.2}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 0.6}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.6, y: 0.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -151,3 +153,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &6676145082030541636
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508754720013960433}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd059513b70c72b438d62dee4b4b2c94, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
