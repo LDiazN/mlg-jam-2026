@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3061296751671886544}
   - component: {fileID: 4981357876371238183}
+  - component: {fileID: 4179774053951535935}
   m_Layer: 0
   m_Name: LampSpawner
   m_TagString: LanternSpawner
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingOrder: 32
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2686617764634401244, guid: 2ca7b2ab15a9f4aabb8e598d93f5e039, type: 3}
-  m_Color: {r: 0.019945808, g: 1, b: 0.0047169924, a: 1}
+  m_Color: {r: 0.0039215684, g: 1, b: 0.85271126, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,3 +92,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &4179774053951535935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657783301020576911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cac7b1b7ccb145a5b840c54e88bf652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldGenerator.LanternSpawner.LampSpawner
+  quantity: 2
+  lanternPrefab: {fileID: 0}
