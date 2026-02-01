@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6724148874978291937}
   - component: {fileID: 1307751633098705905}
   - component: {fileID: 2525767150343312431}
+  - component: {fileID: 6954002564284319735}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -151,3 +152,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9876d21878fc5f44a85f47a62732a090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Altar
+--- !u!114 &6954002564284319735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033022688035810939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6c4120273cb4b7ba96ce4a44a79e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scenes.WorldGenerator.Lamp

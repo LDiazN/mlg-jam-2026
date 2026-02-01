@@ -1,0 +1,19 @@
+using MPlayer;
+using UnityEngine;
+
+namespace Scenes.WorldGenerator
+{
+    public class Lamp : MonoBehaviour
+    {
+        private void OnTriggerEnter2D(Collider2D other)
+
+        {
+            var player = other.gameObject.GetComponent<Player>();
+
+            if (!player || player.type == PlayerType.Dragon)
+                return;
+
+          
+        }
+    }
+}
