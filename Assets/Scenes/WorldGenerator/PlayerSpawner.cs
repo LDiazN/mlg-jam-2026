@@ -1,5 +1,6 @@
 using Control;
 using Input;
+using Input;
 using MPlayer;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -8,91 +9,43 @@ namespace Scenes.WorldGenerator
 {
     public class PlayerSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject dragonPrefab;
         [SerializeField] private GameObject playerPrefab;
         [SerializeField] private GameObject[] playerSpawnPositions;
-        [SerializeField] private GameObject dragonSpawnPosition;
-
-        private bool hasDragonSpawned = false;
-        private int playerCount = 0;
 
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
+        public Masks masks;
 
-        private void OnEnable()
+        private void Start()
         {
-            var channel = EventsChannel.Get();
-            channel.OnPlayerJoined += OnPlayerJoined;
-        }
-
-        private void OnDisable()
-        {
-            var channel = EventsChannel.Get();
-            channel.OnPlayerJoined -= OnPlayerJoined;
-        }
-
-        private void OnPlayerJoined(
-            int playerid,
-            InputManager.PlayerData data)
-        {
-            if (dragonPrefab == null || playerPrefab == null)
+            int playerCount = 0;
+            foreach (var kvp in InputManager.PlayerToData)
             {
-                Debug.LogError("Prefabs are not assigned.");
-                return;
-            }
-
-            if (collisionTilemap == null || groundTilemap == null)
-            {
-                Debug.LogError("Tilemaps are not assigned.");
-                return;
-            }
-
-            GameObject obj;
-
-            if (!hasDragonSpawned)
-            {
-                if (dragonSpawnPosition == null)
+                int playerId = kvp.Key;
+                if(kvp.Value.IsDragon)
                 {
-                    Debug.LogError("Dragon spawn position is not assigned.");
-                    return;
+                    continue;
                 }
+                
 
-                obj = Instantiate(
-                    dragonPrefab,
-                    dragonSpawnPosition.transform.position,
-                    Quaternion.identity
-                );
-
-                hasDragonSpawned = true;
-            }
-            else
-            {
-                if (playerSpawnPositions == null || playerSpawnPositions.Length <= playerCount)
-                {
-                    Debug.LogError("Player spawn positions are not properly assigned or out of bounds.");
-                    return;
-                }
-
-                obj = Instantiate(
+                GameObject obj = Instantiate(
                     playerPrefab,
                     playerSpawnPositions[playerCount].transform.position,
                     Quaternion.identity
                 );
 
+                Player player = obj.GetComponent<Player>();
+
+                player.playerId = playerId;
+                player.Movement.collisionTilemap = collisionTilemap;
+                player.Movement.groundTilemap = groundTilemap;
+                player.bar = masks.masks[playerCount];
+                
+
                 playerCount++;
+                obj.SetActive(true);
             }
-
-            Player player = obj.GetComponent<Player>();
-            if (player == null)
-            {
-                Debug.LogError("Player component is missing on the instantiated object.");
-                return;
-            }
-
-            player.playerId = playerid;
-            player.Movement.collisionTilemap = collisionTilemap;
-            player.Movement.groundTilemap = groundTilemap;
-            obj.SetActive(true);
         }
     }
+
 }
