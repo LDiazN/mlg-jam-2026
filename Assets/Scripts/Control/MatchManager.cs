@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Input;
 using MPlayer;
+using Scenes.WorldGenerator;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
