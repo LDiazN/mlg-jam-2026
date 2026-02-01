@@ -1,6 +1,7 @@
 using System;
 using Control;
 using QFSW.QC;
+using TMPro;
 using UnityEngine;
 
 namespace MPlayer
@@ -11,6 +12,15 @@ namespace MPlayer
 
         [Min(0)]
         [SerializeField] private int MaxCharge = 100;
+
+        [SerializeField] private Color RageColor = Color.magenta;
+
+        [Tooltip("How many units of energy to lose per second once in rage mode")]
+        [Min(0)]
+        [SerializeField] private int unitsPerSecond = 5;
+
+        [SerializeField] private GameObject rageTrail;
+        [SerializeField] private GameObject normalTrail;
 
         #endregion
 
@@ -27,7 +37,39 @@ namespace MPlayer
 
         private int _currentCharge;
 
+        private SpriteRenderer _spriteRenderer;
+        private Color _originalColor;
+
+        private float timeSinceLastDip;
+
         #endregion
+
+        private void Awake()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        private void Start()
+        {
+            _originalColor = _spriteRenderer.color;
+        }
+
+        private void Update()
+        {
+            if (_currentState == State.Normal)
+                return;
+
+            // In rage
+            timeSinceLastDip += Time.deltaTime;
+            if (timeSinceLastDip >= 1)
+            {
+                timeSinceLastDip = 0;
+                _currentCharge = Mathf.Max(0, _currentCharge - unitsPerSecond);
+                EventsChannel.DragonChargeChanged((float)_currentCharge / MaxCharge);
+                if (_currentCharge == 0)
+                    FinishRage();
+            }
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -40,9 +82,29 @@ namespace MPlayer
             Destroy(item.gameObject);
             var shouldRage = _currentCharge == MaxCharge;
             if (shouldRage)
-                _currentState = State.Rage;
+            {
+                StartRage();
+            }
 
-            EventsChannel.DragonChargeChanged((float)_currentCharge / MaxCharge, shouldRage);
+            EventsChannel.DragonChargeChanged((float)_currentCharge / MaxCharge);
+        }
+
+        private void StartRage()
+        {
+            _currentState = State.Rage;
+            EventsChannel.DragonRageStarted();
+            _spriteRenderer.color = RageColor;
+            rageTrail.gameObject.SetActive(true);
+            normalTrail.gameObject.SetActive(false);
+        }
+
+        private void FinishRage()
+        {
+            _currentState = State.Normal;
+            EventsChannel.DragonRageFinished();
+            _spriteRenderer.color = _originalColor;
+            rageTrail.gameObject.SetActive(false);
+            normalTrail.gameObject.SetActive(true);
         }
 
         #region Commands

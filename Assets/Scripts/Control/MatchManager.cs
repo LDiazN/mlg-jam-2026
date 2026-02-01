@@ -62,6 +62,7 @@ namespace Control
 
             channel.OnCandleLit += OnCandleLit;
             channel.OnPlayerDied += OnPlayerDied;
+            channel.OnDragonRageFinished += SetupDragonItems;
         }
 
         private void OnDisable()
@@ -71,6 +72,7 @@ namespace Control
 
             channel.OnCandleLit -= OnCandleLit;
             channel.OnPlayerDied -= OnPlayerDied;
+            channel.OnDragonRageFinished -= SetupDragonItems;
         }
 
         private void OnPlayerDied(Player obj)

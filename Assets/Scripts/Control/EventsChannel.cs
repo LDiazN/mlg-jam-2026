@@ -45,7 +45,11 @@ namespace Control
 
         public event Action<Item, Item> OnPlayerItemUpdate;
 
-        public event Action<float, bool> OnDragonChargeChanged;
+        public event Action<float> OnDragonChargeChanged;
+
+        public event Action OnDragonRageStarted;
+
+        public event Action OnDragonRageFinished;
 
         #endregion
 
@@ -80,6 +84,10 @@ namespace Control
 
         // Dragon
         // new charge goes from 0 to 1
-        public static void DragonChargeChanged(float newCharge, bool rage) => _instance?.OnDragonChargeChanged?.Invoke(newCharge, rage);
+        public static void DragonChargeChanged(float newCharge) => _instance?.OnDragonChargeChanged?.Invoke(newCharge);
+
+        public static void DragonRageStarted() => _instance?.OnDragonRageStarted?.Invoke();
+
+        public static void DragonRageFinished() => _instance?.OnDragonRageFinished?.Invoke();
     }
 }
