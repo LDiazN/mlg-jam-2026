@@ -48,6 +48,8 @@ MonoBehaviour:
   controls: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   defaultMode: 1
   clearControllersOnDestroy: 1
+  maxPlayers: 4
+  masks: {fileID: 11400000, guid: 144aca181a00c954fad1345b11ac0b5a, type: 2}
 --- !u!114 &3196922116485465692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,3 +64,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputManagerBindings
   controls: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   inputStartsActive: 1
+  collectPlayers: 0

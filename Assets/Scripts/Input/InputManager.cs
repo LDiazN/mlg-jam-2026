@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Control;
+using MPlayer;
 using QFSW.QC;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Input
 {
@@ -24,6 +26,7 @@ namespace Input
         [SerializeField] private bool clearControllersOnDestroy;
         [Range(2,4)]
         [SerializeField] private int maxPlayers = 4;
+        [SerializeField] private Masks masks;
 
         public int MaxPlayers => maxPlayers;
 
@@ -39,11 +42,18 @@ namespace Input
         public static string CurrentControlScheme => _instance?._currentControlScheme;
 
         // Player ID to device id playerid to controllerid
-        private static readonly Dictionary<int, int> _playerToController = new();
-        public static Dictionary<int, int> PlayerToController => _playerToController;
+        public struct PlayerData
+        {
+            public int ControllerId;
+            public int MaskIndex;
+            public bool IsDragon;
+        }
+
+        private static readonly Dictionary<int, PlayerData> _playerToData = new();
+        public static Dictionary<int, PlayerData> PlayerToData => _playerToData;
 
         private static int _playerCounter = 1;
-        public static int TotalPlayers => _playerToController.Count;
+        public static int TotalPlayers => _playerToData.Count;
         public static int DragonPlayer = -1;
 
         #endregion
@@ -82,7 +92,7 @@ namespace Input
         private void OnDestroy()
         {
             if (clearControllersOnDestroy)
-                _playerToController.Clear();
+                _playerToData.Clear();
             _playerCounter = 0;
         }
 
@@ -133,26 +143,50 @@ namespace Input
             if (!_instance)
                 return true;
 
-            int v = -1;
-            if (!_playerToController.TryGetValue(playerID, out v))
+            if (!_playerToData.TryGetValue(playerID, out var v))
                 return false;
 
-            return v == context.control.device.deviceId;
+            return v.ControllerId == context.control.device.deviceId;
         }
 
         public static void AddPlayer(int deviceId)
         {
             var playerId = _playerCounter++;
-            _playerToController[playerId] = deviceId;
-            EventsChannel.PlayerJoined(playerId, deviceId);
+            var isDragon = _playerToData.Count == 0;
+            var maskIdx = isDragon ? 0 : ChooseUnusedMask();
+
+            PlayerData data = new(){ControllerId = deviceId, MaskIndex = maskIdx, IsDragon = isDragon};
+            _playerToData[playerId] = data;
+            EventsChannel.PlayerJoined(playerId, data);
+        }
+
+        private static int ChooseUnusedMask()
+        {
+            if (!_instance)
+                return 0;
+
+            while (true)
+            {
+                var maskIdx = Random.Range(0, _instance.masks.masks.Count);
+                var valid = true;
+                foreach(var (v, data) in _playerToData)
+                    if (data.MaskIndex == maskIdx)
+                    {
+                        valid = false;
+                        break;
+                    }
+
+                if (valid)
+                    return maskIdx;
+            }
         }
 
         public static void RemovePlayer(int playerId)
         {
-            var isHere = _playerToController.TryGetValue(playerId, out int device);
+            var isHere = _playerToData.TryGetValue(playerId, out var device);
             if (isHere)
             {
-                _playerToController.Remove(playerId);
+                _playerToData.Remove(playerId);
                 EventsChannel.PlayerLeft(playerId);
             }
         }
@@ -173,7 +207,7 @@ namespace Input
         {
 
             var s = "Player ID - Device ID\n";
-            foreach (var (player, controller) in _playerToController)
+            foreach (var (player, controller) in _playerToData)
                 s += $"{player} - {controller}\n";
 
             return s;

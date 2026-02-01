@@ -1,4 +1,5 @@
 using Control;
+using Input;
 using UnityEngine;
 
 namespace Scenes.Input
@@ -19,7 +20,7 @@ namespace Scenes.Input
             channel.OnPlayerJoined -= OnPlayerJoined;
         }
 
-        private void OnPlayerJoined(int playerid, int deviceid)
+        private void OnPlayerJoined(int playerid, InputManager.PlayerData data)
         {
             var obj = Instantiate(prefab);
             obj.playerId = playerid;

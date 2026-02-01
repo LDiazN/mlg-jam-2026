@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using Input;
 using MPlayer;
+using UI;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 namespace Control
 {
@@ -27,6 +28,8 @@ namespace Control
         [Header("Players")]
         [Min(0)]
         [SerializeField] private int maxCandles;
+        [SerializeField] private List<PlayerUI> playersUIs;
+        [SerializeField] private Masks masks;
 
         #endregion
 
@@ -53,6 +56,9 @@ namespace Control
 
             // Setup match now: init players and dragon
             SetupDragon();
+
+            // Setup Players
+            SetupPlayers();
         }
 
         private void OnEnable()
@@ -151,6 +157,38 @@ namespace Control
             {
                 var item = Instantiate(dragonItemPrefab);
                 item.transform.position = dragonItemsSpawners[spawnerIdx].position;
+            }
+        }
+
+        private void SetupPlayers()
+        {
+            foreach (var (playerId, data) in InputManager.PlayerToData)
+            {
+
+            }
+
+            SetupPlayerUIs();
+        }
+
+        private void SetupPlayerUIs()
+        {
+            int nextUi = 0;
+            foreach (var (id, data) in InputManager.PlayerToData)
+            {
+                if (data.IsDragon)
+                    continue;
+
+                var ui = playersUIs[nextUi];
+                ui.playerId = id;
+                ui.Mask = masks.masks[data.MaskIndex];
+                ui.Inventory = null;
+                ui.name = $"P{id}";
+                nextUi++;
+            }
+
+            for (int i = nextUi; i < playersUIs.Count; i++)
+            {
+                playersUIs[i].gameObject.SetActive(false);
             }
         }
     }
