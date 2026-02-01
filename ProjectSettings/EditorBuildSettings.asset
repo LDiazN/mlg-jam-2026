@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Game.unity
     guid: b806adc1dc331374e9e3fac580806df7
+  - enabled: 1
+    path: Assets/Scenes/DragonWins.unity
+    guid: c7149cb7162460e498afc49de20713bd
+  - enabled: 1
+    path: Assets/Scenes/PlayersWin.unity
+    guid: a21f133e3f5799e4e9abac3e0de45ae5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
