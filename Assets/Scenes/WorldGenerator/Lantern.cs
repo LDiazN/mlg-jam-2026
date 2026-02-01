@@ -7,10 +7,8 @@ public class Lantern : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
 
     {
-        Debug.Log(other.gameObject.tag);
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
+        if (!other.gameObject.CompareTag("Player")) return;
+
+        Destroy(gameObject);
     }
 }

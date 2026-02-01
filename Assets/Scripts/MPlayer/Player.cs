@@ -15,8 +15,6 @@ namespace MPlayer
         public PlayerType type;
         [SerializeField] private PlayerMovement _movement;
         public PlayerMovement Movement => _movement;
-        
-
 
         #endregion
 
@@ -25,13 +23,15 @@ namespace MPlayer
             _movement = GetComponent<PlayerMovement>();
         }
 
-        public void SetItem(Item newItem)
+        public void SetItem(
+            Item newItem)
         {
             var old = item;
             item = newItem;
             EventsChannel.PlayerItemUpdate(this, old, newItem);
         }
     }
+
 
     public enum Item
     {
