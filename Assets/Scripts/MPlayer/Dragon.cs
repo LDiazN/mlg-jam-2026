@@ -37,6 +37,8 @@ namespace MPlayer
 
         private float timeSinceLastDip;
 
+        [SerializeField] private ParticleSystem _rageParticles;
+
         #endregion
 
         private void Awake()
@@ -71,13 +73,13 @@ namespace MPlayer
             {
                 TakeItem(dragonItem);
             }
-            
+
             var player = other.gameObject.GetComponent<Player>();
             if (player && _currentState == State.Rage)
             {
                 Player playerComp = player.GetComponent<Player>();
                 EventsChannel.PlayerDied(playerComp);
-                Destroy(player.gameObject); 
+                Destroy(player.gameObject);
             }
         }
 
@@ -101,6 +103,7 @@ namespace MPlayer
             EventsChannel.DragonRageStarted();
             rageTrail.gameObject.SetActive(true);
             normalTrail.gameObject.SetActive(false);
+            _rageParticles.gameObject.SetActive(true);
         }
 
         private void FinishRage()
@@ -109,6 +112,7 @@ namespace MPlayer
             EventsChannel.DragonRageFinished();
             rageTrail.gameObject.SetActive(false);
             normalTrail.gameObject.SetActive(true);
+            _rageParticles.gameObject.SetActive(false);
         }
 
         #region Commands
