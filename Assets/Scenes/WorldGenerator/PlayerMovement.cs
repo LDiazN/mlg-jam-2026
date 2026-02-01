@@ -47,7 +47,7 @@ namespace Scenes.WorldGenerator
             }
         }
 
-        private bool CanMove(
+        protected virtual bool CanMove(
             Vector2 direction)
         {
             Vector3Int position =
@@ -65,13 +65,6 @@ namespace Scenes.WorldGenerator
             InputAction.CallbackContext context) =>
             InputManager.IsMine(context, playerId);
         
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            Debug.Log("gola");
-            if (other.gameObject.CompareTag("Player"))
-            {
-                Destroy(gameObject);
-            }
-        }
+       
     }
 }
