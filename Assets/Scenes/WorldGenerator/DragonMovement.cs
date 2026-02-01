@@ -1,3 +1,4 @@
+using Control;
 using UnityEngine;
 
 namespace Scenes.WorldGenerator
@@ -16,6 +17,33 @@ namespace Scenes.WorldGenerator
                 groundTilemap.HasTile(position);
 
             return hasGroundTile;
+        }
+        
+        private void OnEnable()
+        {
+            var channel = EventsChannel.Get();
+            if (!channel) return;
+
+            channel.OnDragonRageStarted += OnDragonRageStarted;
+            channel.OnDragonRageFinished += OnDragonRageFinished;
+        }
+
+        private void OnDisable()
+        {
+            var channel = EventsChannel.Get();
+            if (!channel) return;
+
+            channel.OnDragonRageStarted -= OnDragonRageStarted;
+            channel.OnDragonRageFinished -= OnDragonRageFinished;
+        }
+
+        private void OnDragonRageStarted()
+        {
+        }
+
+        private void OnDragonRageFinished()
+        {
+            
         }
     }
 }
