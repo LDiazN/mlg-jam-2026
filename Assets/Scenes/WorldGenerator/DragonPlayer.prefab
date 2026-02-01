@@ -121,10 +121,10 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.05724907, g: 0, b: 1, a: 1}
-      key1: {r: 0.05882353, g: 0, b: 1, a: 0.24313726}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.05724907, g: 0, b: 1, a: 0}
+      key1: {r: 0.05882353, g: 0, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0.24313726}
+      key3: {r: 0, g: 0, b: 0, a: 0.24313726}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
@@ -138,9 +138,9 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
+      atime1: 12529
+      atime2: 65535
+      atime3: 65535
       atime4: 0
       atime5: 0
       atime6: 0
@@ -148,9 +148,9 @@ TrailRenderer:
       m_Mode: 0
       m_ColorSpace: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 4
     alignment: 1
     textureMode: 0
     textureScale: {x: 1, y: 1}
@@ -168,6 +168,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2606299853558190318, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -212,16 +216,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 9175752932732157740, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8865007868171569750, guid: 2ca7b2ab15a9f4aabb8e598d93f5e039, type: 3}
+    - target: {fileID: 9175752932732157740, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175752932732157740, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.11066723
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175752932732157740, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7471619107644589139}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5930224318558927577, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5477744642288294879}
   m_SourcePrefab: {fileID: 100100000, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
 --- !u!4 &4464290417584189523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
   m_PrefabInstance: {fileID: 1290738089538228250}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4874580267457080003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5930224318558927577, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+  m_PrefabInstance: {fileID: 1290738089538228250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5477744642288294879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874580267457080003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d8a30f63f3d3f4eb540d88f4d8acca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MPlayer.Dragon
+  MaxCharge: 100
