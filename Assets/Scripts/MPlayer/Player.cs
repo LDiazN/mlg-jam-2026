@@ -1,4 +1,3 @@
-using System;
 using Control;
 using Scenes.WorldGenerator;
 using UnityEngine;
