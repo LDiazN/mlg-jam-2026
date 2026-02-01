@@ -95,7 +95,6 @@ namespace Control
             {
                 _candlesRitualComplete = true;
                 EventsChannel.RitualComplete(Ritual.Candles);
-                // TODO
             }
 
             CheckPlayersWin();

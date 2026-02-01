@@ -1,14 +1,19 @@
-using System;
-using Unity.VisualScripting;
+using MPlayer;
 using UnityEngine;
 
-public class Lantern : MonoBehaviour
+namespace Scenes.WorldGenerator
 {
-    private void OnTriggerEnter2D(Collider2D other)
-
+    public class Lantern : MonoBehaviour
     {
-        if (!other.gameObject.CompareTag("Player")) return;
+        private void OnTriggerEnter2D(Collider2D other)
 
-        Destroy(gameObject);
+        {
+            var player = other.gameObject.GetComponent<Player>();
+
+            if (!player || player.type == PlayerType.Dragon)
+                return;
+
+            player.SetItem(Item.Match);
+        }
     }
 }
