@@ -1,5 +1,6 @@
 using System;
 using Control;
+using QFSW.QC;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,7 +49,8 @@ namespace UI
             channel.OnDragonRageFinished -= OnDragonRageFinished;
         }
 
-        private void OnDragonChargeChanged(float percent)
+        private void OnDragonChargeChanged(
+            float percent)
         {
             slider.value = percent;
         }
@@ -62,5 +64,16 @@ namespace UI
         {
             bar.color = rageColor;
         }
-    }
+
+        [Command("DG.RageOn", "Simulate dragon rage start")]
+        public void SimulateRageStart()
+        {
+            EventsChannel.DragonRageStarted();
+        }
+        [Command("DG.RageOff", "Simulate dragon rage start")]
+        public void SimulateRageFinished()
+        {
+            EventsChannel.DragonRageFinished();
+        }
+}
 }

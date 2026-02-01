@@ -14,6 +14,7 @@ namespace Scenes.WorldGenerator
 
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
+        public Masks masks;
 
         private void Start()
         {
@@ -21,6 +22,11 @@ namespace Scenes.WorldGenerator
             foreach (var kvp in InputManager.PlayerToData)
             {
                 int playerId = kvp.Key;
+                if(kvp.Value.IsDragon)
+                {
+                    continue;
+                }
+                
 
                 GameObject obj = Instantiate(
                     playerPrefab,
@@ -33,6 +39,8 @@ namespace Scenes.WorldGenerator
                 player.playerId = playerId;
                 player.Movement.collisionTilemap = collisionTilemap;
                 player.Movement.groundTilemap = groundTilemap;
+                player.bar = masks.masks[playerCount];
+                
 
                 playerCount++;
                 obj.SetActive(true);

@@ -13,8 +13,6 @@ namespace MPlayer
         [Min(0)]
         [SerializeField] private int MaxCharge = 100;
 
-        [SerializeField] private Color RageColor = Color.magenta;
-
         [Tooltip("How many units of energy to lose per second once in rage mode")]
         [Min(0)]
         [SerializeField] private int unitsPerSecond = 5;
@@ -38,7 +36,6 @@ namespace MPlayer
         private int _currentCharge;
 
         private SpriteRenderer _spriteRenderer;
-        private Color _originalColor;
 
         private float timeSinceLastDip;
 
@@ -49,10 +46,6 @@ namespace MPlayer
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        private void Start()
-        {
-            _originalColor = _spriteRenderer.color;
-        }
 
         private void Update()
         {
@@ -96,7 +89,6 @@ namespace MPlayer
         {
             _currentState = State.Rage;
             EventsChannel.DragonRageStarted();
-            _spriteRenderer.color = RageColor;
             rageTrail.gameObject.SetActive(true);
             normalTrail.gameObject.SetActive(false);
         }
@@ -105,7 +97,6 @@ namespace MPlayer
         {
             _currentState = State.Normal;
             EventsChannel.DragonRageFinished();
-            _spriteRenderer.color = _originalColor;
             rageTrail.gameObject.SetActive(false);
             normalTrail.gameObject.SetActive(true);
         }

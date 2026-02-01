@@ -2100,6 +2100,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2077751535}
     m_Modifications:
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
+      propertyPath: masks
+      value: 
+      objectReference: {fileID: 11400000, guid: 144aca181a00c954fad1345b11ac0b5a, type: 2}
+    - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: dragonPrefab
       value: 
       objectReference: {fileID: 4874580267457080003, guid: f4c2e40ec6a933543969f77b03e01491, type: 3}
