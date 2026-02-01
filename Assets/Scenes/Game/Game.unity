@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -585,6 +585,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+  - {fileID: 221537730}
+  - {fileID: 267473951}
+  - {fileID: 1222070119}
+  - {fileID: 1683857728}
+  - {fileID: 1215911892}
+  - {fileID: 683535233}
+  - {fileID: 361576}
+  - {fileID: 1409964072}
+  - {fileID: 1409571351}
+  - {fileID: 2088562791}
+  - {fileID: 812840943}
+  - {fileID: 4442293389549172097}
+  - {fileID: 1551169814}
+  - {fileID: 372305918457678243}
+  - {fileID: 1363089860}
 --- !u!1001 &398495946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1009,7 +1024,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1171,15 +1186,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: masks
-      value: 
+      value:
       objectReference: {fileID: 11400000, guid: 144aca181a00c954fad1345b11ac0b5a, type: 2}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: ground
-      value: 
+      value:
       objectReference: {fileID: 2064421031}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: dragonPrefab
-      value: 
+      value:
       objectReference: {fileID: 9035915323693705845, guid: f4c2e40ec6a933543969f77b03e01491, type: 3}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: nDragonItems
@@ -1187,11 +1202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: dragonCollision
-      value: 
+      value:
       objectReference: {fileID: 1601289616}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: dragonItemPrefab
-      value: 
+      value:
       objectReference: {fileID: 5508754720013960433, guid: 4291de79d12ca11409eb050fdbd9bbd7, type: 3}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: playersUIs.Array.size
@@ -1199,19 +1214,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'playersUIs.Array.data[0]'
-      value: 
+      value:
       objectReference: {fileID: 1814304838}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'playersUIs.Array.data[1]'
-      value: 
+      value:
       objectReference: {fileID: 1028685142}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'playersUIs.Array.data[2]'
-      value: 
+      value:
       objectReference: {fileID: 1971632308}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'playersUIs.Array.data[3]'
-      value: 
+      value:
       objectReference: {fileID: 1971632308}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: dragonSpawners.Array.size
@@ -1219,19 +1234,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonSpawners.Array.data[0]'
-      value: 
+      value:
       objectReference: {fileID: 957109489}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonSpawners.Array.data[1]'
-      value: 
+      value:
       objectReference: {fileID: 743305301}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonSpawners.Array.data[2]'
-      value: 
+      value:
       objectReference: {fileID: 1779344684}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonSpawners.Array.data[3]'
-      value: 
+      value:
       objectReference: {fileID: 1629169316}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: dragonItemsSpawners.Array.size
@@ -1239,27 +1254,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonItemsSpawners.Array.data[0]'
-      value: 
+      value:
       objectReference: {fileID: 1280934041}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonItemsSpawners.Array.data[1]'
-      value: 
+      value:
       objectReference: {fileID: 1250869005}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonItemsSpawners.Array.data[2]'
-      value: 
+      value:
       objectReference: {fileID: 986179861}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonItemsSpawners.Array.data[3]'
-      value: 
+      value:
       objectReference: {fileID: 2092275559}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonItemsSpawners.Array.data[4]'
-      value: 
+      value:
       objectReference: {fileID: 317613774}
     - target: {fileID: 313732720282549007, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: 'dragonItemsSpawners.Array.data[5]'
-      value: 
+      value:
       objectReference: {fileID: 905492537}
     - target: {fileID: 5137552493910943830, guid: 8b9f7910c9c08cd4889763f1f10949be, type: 3}
       propertyPath: m_Name
@@ -1602,7 +1617,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5660c0424982a884a94aa743e6f68dad, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUI
 --- !u!1 &1150491353
 GameObject:
@@ -1862,8 +1877,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-=======
+
 --- !u!1 &1409571350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,27 +1950,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: masks
-      value: 
+      value:
       objectReference: {fileID: 11400000, guid: 144aca181a00c954fad1345b11ac0b5a, type: 2}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: dragonPrefab
-      value: 
+      value:
       objectReference: {fileID: 4874580267457080003, guid: f4c2e40ec6a933543969f77b03e01491, type: 3}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: playerPrefab
-      value: 
+      value:
       objectReference: {fileID: 5930224318558927577, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: groundTilemap
-      value: 
+      value:
       objectReference: {fileID: 2064421031}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: collisionTilemap
-      value: 
+      value:
       objectReference: {fileID: 1601289616}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: dragonSpawnPosition
-      value: 
+      value:
       objectReference: {fileID: 812840942}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: playerSpawnPositions.Array.size
@@ -1964,15 +1978,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: 'playerSpawnPositions.Array.data[0]'
-      value: 
+      value:
       objectReference: {fileID: 1409964071}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: 'playerSpawnPositions.Array.data[1]'
-      value: 
+      value:
       objectReference: {fileID: 1409571350}
     - target: {fileID: 1729068962712384560, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: 'playerSpawnPositions.Array.data[2]'
-      value: 
+      value:
       objectReference: {fileID: 2088562790}
     - target: {fileID: 4422347785519923793, guid: 321e93b2c9d7336489ceb7db54794fe1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2080,7 +2094,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
->>>>>>> main
+
 --- !u!1 &1601289612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,7 +4597,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5660c0424982a884a94aa743e6f68dad, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUI
 --- !u!224 &1922107909 stripped
 RectTransform:
@@ -4701,7 +4715,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5660c0424982a884a94aa743e6f68dad, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerUI
 --- !u!1 &2064421028
 GameObject:
@@ -14009,7 +14023,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
@@ -14331,8 +14345,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49d93552e56d0924eb4108d73b4f066a, type: 3}
-<<<<<<< HEAD
-=======
+
 --- !u!1 &3549162287146714393 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4657783301020576911, guid: ce3c7f129c00f4b15ac04ae832625b5e, type: 3}
@@ -14348,7 +14361,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cac7b1b7ccb145a5b840c54e88bf652, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::WorldGenerator.LanternSpawner.LampSpawner
   quantity: 2
   lanternPrefab: {fileID: 0}
@@ -14409,7 +14422,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a14b23418efe64eb1f6af4ef8e5a63, type: 3}
->>>>>>> main
+
 --- !u!1001 &4588902822879338787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14647,8 +14660,6 @@ SceneRoots:
   - {fileID: 1150491355}
   - {fileID: 178363360}
   - {fileID: 239131716}
-<<<<<<< HEAD
-=======
   - {fileID: 221537730}
   - {fileID: 267473951}
   - {fileID: 1222070119}
@@ -14664,4 +14675,3 @@ SceneRoots:
   - {fileID: 1551169814}
   - {fileID: 372305918457678243}
   - {fileID: 1363089860}
->>>>>>> main
