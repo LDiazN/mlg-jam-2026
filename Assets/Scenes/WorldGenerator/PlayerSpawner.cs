@@ -18,7 +18,7 @@ namespace Scenes.WorldGenerator
         private void Start()
         {
             int playerCount = 0;
-            foreach (var kvp in InputManager.PlayerToController)
+            foreach (var kvp in InputManager.PlayerToData)
             {
                 int playerId = kvp.Key;
 
