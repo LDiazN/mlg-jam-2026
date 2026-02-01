@@ -73,7 +73,10 @@ namespace MPlayer
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("Dragon item triggered");
+            var dragonItem = other.gameObject.GetComponent<DragonItem>();
+            if (!dragonItem)
+                return;
+            TakeItem(dragonItem);
         }
 
         private void TakeItem(DragonItem item)
