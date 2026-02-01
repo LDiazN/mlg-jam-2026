@@ -6,9 +6,6 @@ public class VolumeSettings : MonoBehaviour
 {
     #region Variables
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private Slider masterSlider;
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider SFXSlider;
     [SerializeField] private float defaultValueVolume = 0.5f;
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,27 +25,24 @@ public class VolumeSettings : MonoBehaviour
 
     public void SetMasterVolume()
     {
-        float volume = masterSlider.value;
-        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("masterVolume", volume);
+        audioMixer.SetFloat("Master", Mathf.Log10(defaultValueVolume) * 20);
+        PlayerPrefs.SetFloat("masterVolume", defaultValueVolume);
     }
     public void SetMusicVolume()
     {
-        float volume = musicSlider.value;
-        audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        audioMixer.SetFloat("Music", Mathf.Log10(defaultValueVolume) * 20);
+        PlayerPrefs.SetFloat("musicVolume", defaultValueVolume);
     }
     public void SetSFXVolume()
     {
-        float volume = SFXSlider.value;
-        audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
-        PlayerPrefs.SetFloat("SFXVolume", volume);
+        audioMixer.SetFloat("SFX", Mathf.Log10(defaultValueVolume) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", defaultValueVolume);
     }
     private void LoadVolume()
     {
-        masterSlider.value = PlayerPrefs.GetFloat("masterVolume", defaultValueVolume);
-        musicSlider.value = PlayerPrefs.GetFloat("musicVolume", defaultValueVolume);
-        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume", defaultValueVolume);
+        PlayerPrefs.GetFloat("masterVolume", defaultValueVolume);
+        PlayerPrefs.GetFloat("musicVolume", defaultValueVolume);
+        PlayerPrefs.GetFloat("SFXVolume", defaultValueVolume);
         SetMasterVolume();
         SetMusicVolume();
         SetSFXVolume();

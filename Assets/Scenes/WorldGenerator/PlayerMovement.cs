@@ -9,7 +9,7 @@ namespace Scenes.WorldGenerator
     [RequireComponent(typeof(Player))]
     public class PlayerMovement : BaseInputBindings
     {
-        public Player player;
+        private Player player;
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
 
@@ -50,7 +50,7 @@ namespace Scenes.WorldGenerator
             }
         }
 
-        private bool CanMove(
+        protected virtual bool CanMove(
             Vector2 direction)
         {
             Vector3Int position =
@@ -67,14 +67,5 @@ namespace Scenes.WorldGenerator
         private bool IsMine(
             InputAction.CallbackContext context) =>
             InputManager.IsMine(context, player.playerId);
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            Debug.Log("gola");
-            if (other.gameObject.CompareTag("Player"))
-            {
-                Destroy(gameObject);
-            }
-        }
     }
 }
