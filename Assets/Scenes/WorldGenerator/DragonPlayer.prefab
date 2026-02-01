@@ -168,13 +168,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1400731183364720017, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1400731183364720017, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 7806760787406792647}
     - target: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.3227544
       objectReference: {fileID: 0}
     - target: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.8733342
       objectReference: {fileID: 0}
     - target: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -212,16 +220,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonPlayer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9175752932732157740, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8865007868171569750, guid: 2ca7b2ab15a9f4aabb8e598d93f5e039, type: 3}
+    - target: {fileID: 9175752932732157740, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175752932732157740, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1502002545287684321, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7471619107644589139}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5930224318558927577, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7806760787406792647}
   m_SourcePrefab: {fileID: 100100000, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
 --- !u!4 &4464290417584189523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3178915780552499273, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
   m_PrefabInstance: {fileID: 1290738089538228250}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4874580267457080003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5930224318558927577, guid: 24cd7817742f644a197a1c64dab8bd5f, type: 3}
+  m_PrefabInstance: {fileID: 1290738089538228250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7806760787406792647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874580267457080003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbb802e057f044af8bd35b5eaec3be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scenes.WorldGenerator.DragonMovement
+  controls: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  inputStartsActive: 1
+  groundTilemap: {fileID: 0}
+  collisionTilemap: {fileID: 0}

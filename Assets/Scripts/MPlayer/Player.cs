@@ -13,8 +13,9 @@ namespace MPlayer
         public int playerId;
         public Item item = Item.None;
         public PlayerType type;
-        private PlayerMovement _movement;
+        [SerializeField] private PlayerMovement _movement;
         public PlayerMovement Movement => _movement;
+        
 
 
         #endregion

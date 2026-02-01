@@ -9,7 +9,7 @@ namespace Scenes.WorldGenerator
     [RequireComponent(typeof(Player))]
     public class PlayerMovement : BaseInputBindings
     {
-        public Player player;
+        private Player player;
         public Tilemap groundTilemap;
         public Tilemap collisionTilemap;
 
