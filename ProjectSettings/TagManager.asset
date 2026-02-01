@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LanternSpawner
   - Dragon
+  - LampSpawner
   layers:
   - Default
   - TransparentFX
