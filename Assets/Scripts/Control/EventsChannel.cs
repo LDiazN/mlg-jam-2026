@@ -1,4 +1,5 @@
 using System;
+using Input;
 using MPlayer;
 using UnityEngine;
 
@@ -28,7 +29,7 @@ namespace Control
         public event Action OnExampleEvent;
 
         // Args: PlayerID, DeviceId
-        public event Action<int,int> OnPlayerJoined;
+        public event Action<int, InputManager.PlayerData> OnPlayerJoined;
 
         // Args: Player ID
         public event Action<int> OnPlayerLeft;
@@ -66,7 +67,7 @@ namespace Control
 
         public static void ExampleEvent() => _instance?.OnExampleEvent?.Invoke();
 
-        public static void PlayerJoined(int playerId, int controllerId) => _instance?.OnPlayerJoined?.Invoke(playerId, controllerId);
+        public static void PlayerJoined(int playerId, InputManager.PlayerData data) => _instance?.OnPlayerJoined?.Invoke(playerId, data);
 
         public static void PlayerLeft(int playerId) => _instance?.OnPlayerLeft?.Invoke(playerId);
 

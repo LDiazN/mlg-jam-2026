@@ -53,6 +53,9 @@ namespace Control
 
             // Setup match now: init players and dragon
             SetupDragon();
+
+            // Setup Players
+            SetupPlayers();
         }
 
         private void OnEnable()
@@ -152,6 +155,11 @@ namespace Control
                 var item = Instantiate(dragonItemPrefab);
                 item.transform.position = dragonItemsSpawners[spawnerIdx].position;
             }
+        }
+
+        private void SetupPlayers()
+        {
+
         }
     }
 

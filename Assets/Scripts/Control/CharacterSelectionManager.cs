@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using Input;
@@ -6,7 +5,6 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 namespace Control
 {
@@ -51,16 +49,16 @@ namespace Control
             channel.OnPlayerJoined -= OnPlayerJoined;
         }
 
-        private void OnPlayerJoined(int playerId, int deviceId)
+        private void OnPlayerJoined(int playerId, InputManager.PlayerData data)
         {
-            Debug.Log($"Player {playerId} Joined with device {deviceId}");
+            Debug.Log($"Player {playerId} Joined with device {data.ControllerId} and mask {data.MaskIndex}");
             // Total players == 1 implies this is the first player
-            var isTiger = InputManager.TotalPlayers == 1;
-            PlayerCard newCard = isTiger ? Instantiate(dragonPrefab) : Instantiate(playerPrefab);
+            PlayerCard newCard = data.IsDragon ? Instantiate(dragonPrefab) : Instantiate(playerPrefab);
 
             cards.Add(joinCard);
             var joinCardPos = joinCard.transform.position;
             newCard.playerId = playerId;
+            newCard.MaskIndex = data.MaskIndex;
             newCard.transform.SetParent(cardContainer.transform);
             newCard.transform
                 .DOPunchScale(newCard.transform.localScale * 1.2f, 0.25f)
@@ -107,7 +105,7 @@ namespace Control
         public void GoBack()
         {
             InputManager.DragonPlayer = -1;
-            InputManager.PlayerToController.Clear();
+            InputManager.PlayerToData.Clear();
 
             SceneManager.LoadScene(mainMenuScene);
         }

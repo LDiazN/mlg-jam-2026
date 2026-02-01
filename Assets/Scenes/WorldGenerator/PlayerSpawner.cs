@@ -1,4 +1,5 @@
 using Control;
+using Input;
 using MPlayer;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -25,7 +26,7 @@ namespace Scenes.WorldGenerator
 
         private void OnPlayerJoined(
             int playerid,
-            int deviceid)
+            InputManager.PlayerData data)
         {
             var obj = Instantiate(prefab);
             var player = obj.GetComponent<Player>();
