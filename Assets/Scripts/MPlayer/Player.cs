@@ -1,4 +1,5 @@
 using Control;
+using DG.Tweening;
 using Scenes.WorldGenerator;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,6 +38,14 @@ namespace MPlayer
             {
                 _spriteRenderer.sprite = bar;
             }
+            
+// Animate the size with DOTween to grow to 3x then back to 1x
+          transform.localScale = Vector3.one;
+          transform.DOScale(Vector3.one * 3, 1f)
+              .SetLoops(2, LoopType.Yoyo)
+              .Play();
+          
+            
         }
 
         public void SetItem(
