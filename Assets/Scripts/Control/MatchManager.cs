@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Input;
 using MPlayer;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
 
 namespace Control
@@ -11,12 +11,22 @@ namespace Control
     {
         #region Inspector Properties
 
+        [Header("General")]
+        [SerializeField] private Tilemap ground;
+
+        [Header("Dragon")]
         [SerializeField] private List<Transform> dragonSpawners;
-        [Min(0)]
-        [SerializeField] private int maxCandles;
+        [SerializeField] private List<Transform> dragonItemsSpawners;
+        [SerializeField] private GameObject dragonItemPrefab;
+
         [SerializeField] private Player dragonPrefab;
         [SerializeField] private Tilemap dragonCollision;
-        [SerializeField] private Tilemap ground;
+        [Min(0)]
+        [SerializeField] private int nDragonItems = 5;
+
+        [Header("Players")]
+        [Min(0)]
+        [SerializeField] private int maxCandles;
 
         #endregion
 
@@ -52,6 +62,7 @@ namespace Control
 
             channel.OnCandleLit += OnCandleLit;
             channel.OnPlayerDied += OnPlayerDied;
+            channel.OnDragonRageFinished += SetupDragonItems;
         }
 
         private void OnDisable()
@@ -61,6 +72,7 @@ namespace Control
 
             channel.OnCandleLit -= OnCandleLit;
             channel.OnPlayerDied -= OnPlayerDied;
+            channel.OnDragonRageFinished -= SetupDragonItems;
         }
 
         private void OnPlayerDied(Player obj)
@@ -110,6 +122,7 @@ namespace Control
 
         private void SetupDragon()
         {
+            // Setup dragon player
             var spawner = dragonSpawners[Random.Range(0, dragonSpawners.Count)];
             var dragon = Instantiate(dragonPrefab);
             dragon.transform.position = spawner.transform.position;
@@ -117,6 +130,28 @@ namespace Control
             dragon.playerId = InputManager.DragonPlayer;
             dragon.Movement.collisionTilemap = dragonCollision;
             dragon.Movement.groundTilemap = ground;
+
+            SetupDragonItems();
+        }
+
+        private void SetupDragonItems()
+        {
+            // Chose different spawners positions
+            HashSet<int> used = new();
+            while (used.Count < nDragonItems)
+            {
+                var chose = Random.Range(0, dragonItemsSpawners.Count);
+                if (used.Contains(chose))
+                    continue;
+
+                used.Add(chose);
+            }
+
+            foreach (var spawnerIdx in used)
+            {
+                var item = Instantiate(dragonItemPrefab);
+                item.transform.position = dragonItemsSpawners[spawnerIdx].position;
+            }
         }
     }
 
