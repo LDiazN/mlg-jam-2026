@@ -129,6 +129,8 @@ MonoBehaviour:
   playerName: {fileID: 1708085530583314404}
   mask: {fileID: 1984601954290924701}
   inventory: {fileID: 4963930389313803856}
+  bengal: {fileID: -1940399043, guid: 2ca7b2ab15a9f4aabb8e598d93f5e039, type: 3}
+  playerId: 0
 --- !u!1 &4196353381745417318
 GameObject:
   m_ObjectHideFlags: 0
