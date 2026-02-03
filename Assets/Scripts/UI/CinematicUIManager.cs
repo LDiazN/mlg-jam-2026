@@ -43,7 +43,7 @@ public class CinematicUIManager : MonoBehaviour
 
         // Bring the current image to the top
 
-        rect.DOMoveX(rect.position.x - 1930, 1)
+        rect.DOMoveX(rect.position.x - 5000, 1f)
             .OnComplete(() =>
             {
                 _canTween = false;
