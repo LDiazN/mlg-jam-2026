@@ -461,6 +461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlossaryButton
       objectReference: {fileID: 0}
+    - target: {fileID: 429579311574146154, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2714657271811407443, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1162,17 +1166,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f, type: 3}
---- !u!114 &474524102 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
-  m_PrefabInstance: {fileID: 105634901}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &692111281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2073,7 +2066,7 @@ PrefabInstance:
     - target: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
-      objectReference: {fileID: 474524102}
+      objectReference: {fileID: 0}
     - target: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
@@ -7922,6 +7915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InstructionsButton
       objectReference: {fileID: 0}
+    - target: {fileID: 429579311574146154, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2714657271811407443, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8029,11 +8026,11 @@ PrefabInstance:
     - target: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 474524102}
+      objectReference: {fileID: 0}
     - target: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
-      objectReference: {fileID: 474524102}
+      objectReference: {fileID: 0}
     - target: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -8458,7 +8455,7 @@ PrefabInstance:
     - target: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
-      objectReference: {fileID: 474524102}
+      objectReference: {fileID: 0}
     - target: {fileID: 8298146865556008974, guid: 3271580ceada48f489ea6dacaf893823, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
